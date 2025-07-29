@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %} 
+<div class="mt-5">
+ <div class="text-center">
+
+  <img src="{% static 'core/images/My_photo.jpg' %}" alt="ProfilePic" class="img-thumbnail" width="250px" height="150px">
+
+ </div>
+ <div class="mt-5 text-white mx-5 justify-text">
+  <h1 class="font-weight-bold st-font">Hello,</h1>
+  <div class="px-4" style="line-height:2rem;">
+
+    <p style="text-indent:100px;">
+        I am <b class="text-warning">Biswajit Dey,</b> a passionate and dedicated <b class="text-warning">Django developer</b> with a strong foundation in Python and Django, passionate about creating impactful digital solutions.
+    </p>
+
+   <p>
+        I have completed my <b class="text-warning">MCA</b> from <b class="text-warning">Maulana Abul Kalam Azad University Of Technology</b> (Formerly, West Bengal University Of Technology) with a <b class="text-warning">CGPA of 8.34</b> and my <b class="text-warning">BCA</b> from <b class="text-warning">Techno India University</b> with a <b class="text-warning">CGPA of 8.85</b>. Earlier, I completed my Higher Secondary education with <b class="text-warning">81.8%</b> and Madhyamik with <b class="text-warning">73.28%</b>.
+   </p>
+
+   <p>
+        I have developed several projects including <b class="text-warning">a comprehensive web app for efficient school management</b>. The system supports role-based access for admins, faculty, and students. It includes features such as student and staff management, attendance tracking with email notifications to parents, exam and event scheduling, result generation, admit card and ID card generation with downloadable PDFs, and Razorpay integration for secure online fee payments. All functionalities are designed to ensure secure, efficient, and user-friendly interactions. 
+    </p>
+
+    <p>
+        Other projects include a <b class="text-warning">E-Bazaar Seamless Online Shopping with Secure Payment Integration</b>, <b class="text-warning">Grocery Store Web App</b>, <b class="text-warning">a Student Study Portal</b>, and a <b class="text-warning">custom C++ STL Library</b>, all reflecting my strong problem-solving and development skills.
+    </p>
+
+   <p>
+        My goal is to become a skilled Django and full-stack developer, continuously learning modern tools and frameworks to build scalable, secure, and meaningful web applications.
+  </p>
+
+  </div>
+ </div>
+ <div class="text-center">
+  <a href="{% url "contact" %}" class="btn btn-outline-warning my-3 mr-5">Hire Me</a>
+  <a href="{% url "contact" %}" class="btn btn-outline-info my-3">Contact</a>
+ </div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+{% include "core/footer.html" %}
+{% endblock footer %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>New Contact Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        strong {
+            color: #343a40;
+        }
+
+        .message-box {
+            background-color: #f1f3f5;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>📩 New Contact Message</h2>
+
+        <p><strong>Name:</strong> {{ contact.name }}</p>
+        <p><strong>Email:</strong> {{ contact.email }}</p>
+        <p><strong>Address:</strong> {{ contact.address }}</p>
+        <p><strong>City:</strong> {{ contact.city }}</p>
+        <p><strong>State:</strong> {{ contact.state }}</p>
+
+        <hr>
+
+        <p><strong>Message:</strong></p>
+        <div class="message-box">
+            {{ contact.message|linebreaks }}
+        </div>
+    </div>
+
+</body>
+</html>

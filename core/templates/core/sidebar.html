@@ -1,0 +1,18 @@
+{% load static %}
+<div class=" m-2 h-100">
+ <div class="text-center">
+  <img src="{% static 'core/images/My_photo.jpg' %}" alt="ProfilePic" class="img-fluid rounded-circle mt-5" width="100px" heght="100px">
+  <h3 class="text-white mt-3 st-font">Biswajit Dey</h3>
+ </div>
+ <h1 class="mt-4 border-bottom"></h1>
+ <nav class="nav flex-column text-center">
+  <a href="{% url "home" %}" class="nav-link {{home}}">Home</a>
+  <a href="{% url "resume" %}" class="nav-link {{resume_active}}">Resume</a>
+  <a href="{% url "skills" %}" class="nav-link {{skills}}">Skills</a>
+  <a href="{% url "projects" %}" class="nav-link {{projects_active}}">Projects</a>
+  <a href="{% url "social" %}" class="nav-link {{social}}">Social Links</a>
+  <a href="{% url "certifications" %}" class="nav-link {{certificates_active}}">certifications</a>
+  <a href="{% url "blogs" %}" class="nav-link {{blogs_active}}">Blogs</a>
+  <a href="{% url "contact" %}" class="nav-link {{contact_active}}">Contact</a>
+ </nav>
+</div> 

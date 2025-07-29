@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{ project.title }}{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3 class="text-warning mb-5 border-bottom">PROJECT DETAILS</h1>
+    <div class="row text-white">
+        <div class="col-md-6">
+            <img src="{{ project.image.url }}" class="img-fluid rounded" alt="{{ project.title }}">
+        </div>
+        <div class="col-md-6 justify-text py-4">
+            <h5 class="text-warning pb-2">{{ project.title }}</h5>
+            <p><strong class="i-color">Description:</strong> {{ project.description }}</p>
+            <p><strong class="i-color">Technologies Used:</strong> {{ project.technology }}</p>
+            <p><strong class="i-color">Starting Date:</strong> {{ project.start_date}}</p>
+            <p><strong class="i-color">Ending Date:</strong> {{ project.end_date}}</p>
+            <p><strong class="i-color">Duration:</strong> {{ project.duration_in_words }}</p>
+            <p><strong class="i-color">Updated Date:</strong> {{ project.updated_at }}</p>
+
+            {% if project.live_link %}
+            <p><a href="{{ project.live_link }}" class="btn btn-success" target="_blank">Live Demo</a></p>
+            {% endif %}
+            {% if project.github_link %}
+            {% comment %} <p><a href="{{ project.github_link }}" class="btn btn-outline-light" target="_blank">GitHub Link</a></p> {% endcomment %}
+
+            <div class="text-center">
+                <a href="{{ project.github_link }}" class="btn btn-outline-warning my-3 mr-5">GitHub Link</a>
+            </div>
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+{% include "core/footer.html" %}
+{% endblock footer %}

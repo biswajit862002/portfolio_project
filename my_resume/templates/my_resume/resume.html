@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}My-Resume{% endblock title %}
+
+{% block content %} 
+
+<div class="container mt-5">
+    <h1 class="text-warning mb-5 border-bottom">Resume</h1>
+
+    <div class="row text-center text-white mb-5">
+        {% for res in resume %}
+        <div class="col-sm-4 py-3">
+            <div class="card bg-dark box-shadow btn hover-scale">
+            <img src="{{ res.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-warning pb-2">{{ res.title }}</h5>
+                    <p class="card-text text-white">Updated Date : {{ res.updated_at }}</p>
+                    <a href="{{ res.live_link.url }}" class="btn btn-outline-warning mt-2" target="_blank">View My Resume</a>
+
+                </div>
+            </div>
+        </div> 
+        {% endfor %}
+
+        
+
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block footer %}
+{% include "core/footer.html" %}
+{% endblock footer %}

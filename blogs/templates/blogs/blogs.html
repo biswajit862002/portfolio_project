@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Blogs{% endblock title %}
+
+{% block content %} 
+
+<div class="container mt-5">
+    <h1 class="text-warning mb-5 border-bottom">BLOGS</h1>
+
+    <div class="row text-center text-white mb-5">
+        {% for blog in blogs %}
+        <div class="col-sm-4 py-3">
+            <div class="card bg-dark box-shadow btn hover-scale">
+            <img src="{{ blog.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-warning pb-2">{{ blog.title }}</h5>
+                    <p class="card-text text-white">{{ blog.description|truncatewords:17 }}</p>
+                    <p class="card-text text-white">Created Date : {{blog.created_at}}</p>
+
+                    <a href="{% url 'blog_detail' blog.id %}" class="btn btn-outline-warning">Click Here</a>
+                </div>
+            </div>
+        </div> 
+        {% endfor %}
+
+        
+
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block footer %}
+{% include "core/footer.html" %}
+{% endblock footer %}

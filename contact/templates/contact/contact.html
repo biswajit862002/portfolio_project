@@ -1,0 +1,167 @@
+
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-warning mb-5 border-bottom">CONTACT ME</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    
+    {% comment %} <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-3">Send Message</button>
+    </form> {% endcomment %}
+
+        <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="row text-start text-white">
+            <div class="col-md-6 mb-3">
+                <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                {{ form.name }}
+                {% if form.name.errors %}
+                    <div class="text-danger">{{ form.name.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <div class="text-danger">{{ form.email.errors }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="mb-3 text-white">
+            {% comment %} {{ form.address.label_tag }} {% endcomment %}
+            <label for="{{ form.address.id_for_label }}">{{ form.address.label }}</label>
+
+            {{ form.address }}
+            {% if form.address.errors %}
+                <div class="text-danger">{{ form.address.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="row text-white">
+            <div class="col-md-6 mb-3">
+                {% comment %} {{ form.city.label_tag }} {% endcomment %}
+                <label for="{{ form.city.id_for_label }}">{{ form.city.label }}</label>
+                {{ form.city }}
+                {% if form.city.errors %}
+                    <div class="text-danger">{{ form.city.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="col-md-6 mb-3">
+                {% comment %} {{ form.state.label_tag }} {% endcomment %}
+                <label for="{{ form.state.id_for_label }}">{{ form.state.label }}</label>
+                {{ form.state }}
+                {% if form.state.errors %}
+                    <div class="text-danger">{{ form.state.errors }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="mb-3 text-white">
+            {% comment %} {{ form.message.label_tag }} {% endcomment %}
+            <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+            {{ form.message }}
+            {% if form.message.errors %}
+                <div class="text-danger">{{ form.message.errors }}</div>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-outline-warning mt-3 text-center">Send Message</button>
+    </form>
+
+
+
+
+</div>
+{% endblock content %}
+
+{% block footer %}
+{% include "core/footer.html" %}
+{% endblock footer %}
+
+
+
+
+{% comment %} {% extends 'core/base.html' %}
+
+{% block title %}Contact{% endblock title %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="text-warning mb-5 border-bottom">CONTACT</h1>
+
+    <div class="row text-start text-white mb-5">
+        <div class="col-sm-12">
+
+
+        <form class="row g-3">
+        <div class="col-md-6">
+            <label for="inputName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="inputName">
+          </div>
+
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="col-md-6">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>west Bengal</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3"></textarea>
+          </div>
+        
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+      </form>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock content %} 
+
+
+
+{% block footer %}
+{% include "core/footer.html" %}
+{% endblock footer %} {% endcomment %}
+
+

@@ -1,0 +1,174 @@
+/* justify text */
+.justify-text {
+  text-align: justify;
+}
+
+/* Font */
+.st-font {
+  font-family: "Satisfy";
+}
+
+/* box-shadow */
+.box-shadow{
+	box-shadow: 0px 2px 10px rgba(188, 180, 180, 0.5);
+	/* box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); */
+}
+
+/* hover effect for card */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem; 
+  text-transform: capitalize;
+}
+
+.container-fluid {
+  min-height: 100%;
+}
+
+/* Service Icon Color */
+.i-color {
+  color: chartreuse;
+}
+
+/* Service Subtitle Color */
+.ss-color {
+  color: silver;
+}
+
+a.nav-link {
+  color: whitesmoke;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+a.nav-link:hover {
+  color: black;
+  background-color: #e9cd79;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+a.nav-link.active {
+  color: black;
+  background-color: #ffc107;
+  font-weight: bold;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+
+/*footer section*/
+.footer
+{
+    color: white;
+}
+
+.footer .box-container
+{
+	border: 0px solid;
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+	grid-gap: 24px;
+}
+
+.footer .box-container .box h3
+{
+	font-size: 25px;
+    color: #ffc107;
+	padding: 16px 0;
+}
+
+.footer .box-container .box h3 i
+{
+    color: white;
+
+}
+
+.footer .box-container .box .links
+{
+	display: block;
+	font-size: 15px;
+    text-decoration: none;
+	color: #d3c9c9;
+	padding: 10px 0;
+}
+
+.footer .box-container .box .links i
+{
+    color: chartreuse;
+	padding-right: .5rem;
+}
+
+.footer .box-container .box .links:hover i
+{
+	padding-right: 2rem;
+}
+
+
+.footer .box-container .box p
+{
+	line-height: 1.8;
+	font-size: 15px;
+	color: #d3c9c9;
+	padding: 10px 0;
+}
+
+.footer .box-container .box .share a
+{
+	border: 0px solid;
+	border-radius: .5rem;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	color: #130f40;
+	margin-left: .2rem;
+	background-color: #eee;
+	text-align: center;
+    text-decoration: none;
+}
+
+.footer .box-container .box .share a:hover
+{
+	background-color: #ffc107;
+	color: #fff;
+}
+
+.map{
+	width: 100%;
+	height: 15rem;
+}
+
+.footer .credit span
+{
+	color: #ffc107;
+    font-weight: 500;
+}
+
+/*footer section*/
+
+
+/*media queires*/
+@media (max-width: 450px)
+{
+    html
+	{
+		font-size: 70%;
+	}
+
+
+	.footer
+	{
+		text-align: center;
+	}
+}

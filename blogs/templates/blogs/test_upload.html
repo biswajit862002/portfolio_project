@@ -1,0 +1,11 @@
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="file" name="image">
+  <button type="submit">Upload</button>
+</form>
+
+{% if url %}
+  <p>Uploaded Image:</p>
+  <img src="{{ url }}" alt="Image" width="300">
+  <p>{{ url }}</p>
+{% endif %}

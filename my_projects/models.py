@@ -1,12 +1,14 @@
 from django.db import models
 from datetime import timedelta
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     technology = models.CharField(max_length=300)
-    image = models.ImageField(upload_to='project_images/')
+    # image = models.ImageField(upload_to='project_images/')
+    image = CloudinaryField('image')
     live_link = models.URLField(blank=True, null=True)
     github_link = models.URLField(blank=True, null=True)
     start_date = models.DateField(blank=True, null=True)

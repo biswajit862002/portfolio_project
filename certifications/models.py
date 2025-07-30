@@ -10,7 +10,7 @@ class Certification(models.Model):
     image = CloudinaryField('image')
 
     # live_link = models.FileField(upload_to='certificates/pdfs/')  # For storing PDF certificate files
-    live_link = CloudinaryField('raw')  # For PDF file,  raw means non-image file (PDF, DOCX, etc.)
+    live_link = CloudinaryField(resource_type='raw')  # For PDF file,  raw means non-image file (PDF, DOCX, etc.)
 
     organization_name = models.CharField(max_length=200)
     issue_date = models.DateField()

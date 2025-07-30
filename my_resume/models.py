@@ -5,11 +5,13 @@ from cloudinary.models import CloudinaryField
 
 class Resume(models.Model):
     title = models.CharField(max_length=200)
-    # image = models.ImageField(upload_to='resume/images/')  # For resume thumbnail or badge
-    image = CloudinaryField('image')
+    image = models.ImageField(upload_to='resume/images/')  # For resume thumbnail or badge
+    # image = CloudinaryField('image')
 
-    # live_link = models.FileField(upload_to='certificates/pdfs/')  # For storing PDF resume files
-    live_link = CloudinaryField(resource_type='raw')  # For PDF file,  raw means non-image file (PDF, DOCX, etc.)
+    live_link = models.FileField(upload_to='certificates/pdfs/')  # For storing PDF resume files
+    # live_link = CloudinaryField(resource_type='raw')  # For PDF file,  raw means non-image file (PDF, DOCX, etc.)
+
+    
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

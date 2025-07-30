@@ -8,8 +8,8 @@ class Resume(models.Model):
     # image = models.ImageField(upload_to='resume/images/')  # For resume thumbnail or badge
     image = CloudinaryField('image')
 
-    live_link = models.FileField(upload_to='certificates/pdfs/')  # For storing PDF resume files
-    # live_link = CloudinaryField('raw')  # For PDF file,  raw means non-image file (PDF, DOCX, etc.)
+    # live_link = models.FileField(upload_to='certificates/pdfs/')  # For storing PDF resume files
+    live_link = CloudinaryField('raw')  # For PDF file,  raw means non-image file (PDF, DOCX, etc.)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

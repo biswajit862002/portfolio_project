@@ -32,11 +32,4 @@ urlpatterns = [
     path("blogs/",include('blogs.urls')),
     path("contact/",include('contact.urls')),
 
-] 
-
-# Serve media only if in DEBUG mode or fallback
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-else:
-    # ✅ Force serve media manually (safe for small projects)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,3 +1,5 @@
+
+
 /* justify text */
 .justify-text {
   text-align: justify;
@@ -29,6 +31,7 @@ body {
   scroll-behavior: smooth;
   scroll-padding-top: 7rem; 
   text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
 }
 
 .container-fluid {

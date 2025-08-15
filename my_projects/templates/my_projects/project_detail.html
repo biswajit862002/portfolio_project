@@ -20,7 +20,9 @@
             <p><strong class="i-color">Updated Date:</strong> {{ project.updated_at }}</p>
 
             {% if project.live_link %}
-            <p><a href="{{ project.live_link }}" class="btn btn-success" target="_blank">Live Demo</a></p>
+            <div class="text-center">
+                <a href="{{ project.live_link }}" class="btn btn-outline-info mt-3" target="_blank">Live Demo</a>
+            </div>
             {% endif %}
             {% if project.github_link %}
             {% comment %} <p><a href="{{ project.github_link }}" class="btn btn-outline-light" target="_blank">GitHub Link</a></p> {% endcomment %}
